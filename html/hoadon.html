@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = "vi">
+	<head>
+		<title>hóa đơn</title>
+		<meta charset = "utf-8">
+		
+	</head>
+	<body>
+		<form>
+            <table border="1" >
+                <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm </th>
+                    <th >Đơn giá</th>
+                    <th >Số lượng</th>
+                    <th>Đơn vị tính</th>
+                    <th >Thành tiền</th>
+                       
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td >A</td>
+                    <td class="DonGia">50</td>
+                    <td class="SoLuong">10</td>
+                    <td>thùng</td>
+                    <td class="ThanhTien">?</td>                   
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td >B</td>
+                    <td class="DonGia">70</td>
+                    <td class="SoLuong">20</td>
+                    <td>bao</td>
+                    <td class="ThanhTien">?</td>                   
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td >c</td>
+                    <td class="DonGia">20</td>
+                    <td class="SoLuong">30</td>
+                    <td>túi</td>
+                    <td class="ThanhTien">?</td>                   
+                </tr>
+                <tr >
+                    <td colspan="5">Tổng thanh toán</td>
+                    <td id="thanhtoan">?</td>
+                    
+                </tr>
+                <script>
+                    const soluong=document.getElementsByClassName("SoLuong");
+                    const dongia=document.getElementsByClassName("DonGia");
+                    const thanhtien=document.getElementsByClassName("ThanhTien");
+                    
+                    let i=0;
+                    let thanhtoan=0;
+                    while(i<=2)
+                    {
+                        thanhtien[i].innerHTML= Number(soluong[i].innerHTML)*Number(dongia[i].innerHTML);
+                        thanhtoan += Number(thanhtien[i].innerHTML);
+                        i++;
+                    }
+                
+                    
+                    document.getElementById("thanhtoan").innerHTML=thanhtoan;
+                </script>
+
+            </table>
+        </form>
+	</body>
+</html>
